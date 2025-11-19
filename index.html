@@ -3,47 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkSphere - Staff Management</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <img src="./imgs/SpaceSync.png" alt="Logo">
-            <div class="nav-again">
-                <a href="">Home</a>
-                <a href="">About Us</a>
-                <a href="">Management</a>
-                <a href="">Contact</a>
-            </div>
-        </nav>
-    </header>
-    <div class="everything-countainer">
-        <div class="countainer-1">
-            <div class="adding-bar">
-                <button>Add User</button>
-            </div>
+    <!-- Sidebar: Unassigned Staff -->
+    <div class="sidebar">
+        <h2>Unassigned Staff</h2>
+        <button id="addWorkerBtn" class="add-btn">+ Add New Worker</button>
+        <div id="unassignedList"></div>
+    </div>
+
+    <!-- Main Area: Floor Plan -->
+    <div class="main">
+        <div class="room" id="conference">
+            <h3>Conference Room</h3>
+            <button class="room-add-btn" data-room="conference">+</button>
+            <div class="room-staff"></div>
         </div>
-        <div class="countainer-2">
-            <div class="room1">
-                <p>Room 1</p>
-            </div>
-            <div class="room2">
-                <p>Room 2</p>
-            </div>
-            <div class="room3">
-                <p>Room 3</p>
-            </div>
-            <div class="room4">
-                <p>Room 4</p>
-            </div>
-            <div class="room5">
-                <p>Room 5</p>
-            </div>
-            <div class="room6">
-                <p>Room 6</p>
-            </div>
+        
+        <div class="room" id="reception">
+            <h3>Reception</h3>
+            <button class="room-add-btn" data-room="reception">+</button>
+            <div class="room-staff"></div>
+        </div>
+        
+        <div class="room" id="security">
+            <h3>Security Room</h3>
+            <button class="room-add-btn" data-room="security">+</button>
+            <div class="room-staff"></div>
+        </div>
+        
+        <div class="room" id="servers">
+            <h3>Servers Room</h3>
+            <button class="room-add-btn" data-room="servers">+</button>
+            <div class="room-staff"></div>
+        </div>
+        
+        <div class="room" id="staff">
+            <h3>Staff Room</h3>
+            <button class="room-add-btn" data-room="staff">+</button>
+            <div class="room-staff"></div>
+        </div>
+        
+        <div class="room" id="vault">
+            <h3>Vault</h3>
+            <button class="room-add-btn" data-room="vault">+</button>
+            <div class="room-staff"></div>
         </div>
     </div>
+
+    <!-- Modal: Add Worker -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Worker</h2>
+            <form id="workerForm">
+                <input type="text" id="name" placeholder="Name *" required>
+                
+                <select id="role" required>
+                    <option value="">Select Role</option>
+                    <option value="Receptionist">Receptionist</option>
+                    <option value="IT Technician">IT Technician</option>
+                    <option value="Security Agent">Security Agent</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Cleaning Staff">Cleaning Staff</option>
+                    <option value="General Staff">General Staff</option>
+                </select>
+                
+                <input type="url" id="photo" placeholder="Photo URL">
+                <input type="email" id="email" placeholder="Email *" required>
+                <input type="tel" id="phone" placeholder="Phone *" required>
+                
+                <div class="buttons">
+                    <button type="button" id="cancelBtn">Cancel</button>
+                    <button type="submit">Add Worker</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Select Employee for Room -->
+    <div id="selectModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Employee</h2>
+            <div id="eligibleList"></div>
+            <button id="closeSelectBtn" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
