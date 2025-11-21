@@ -48,7 +48,7 @@
 
     <div class="modal" id="addModal">
         <div class="modal-content">
-            <h2>Add New Employee</h2>
+            <h2 id="modalTitle">Add New Employee</h2>
             <form id="workerForm">
                 <input type="text" id="name" placeholder="Full Name" required>
                 <input type="email" id="email" placeholder="Email" required>
@@ -70,7 +70,7 @@
                 
                 <div class="buttons">
                     <button type="button" id="cancelBtn">Cancel</button>
-                    <button type="submit">Add Employee</button>
+                    <button type="submit" id="submitBtn">Add Employee</button>
                 </div>
             </form>
         </div>
@@ -81,6 +81,28 @@
             <h2>Select Employee</h2>
             <div id="eligibleList"></div>
             <button class="cancel-btn" id="closeSelectBtn">Cancel</button>
+        </div>
+    </div>
+
+    <div class="modal" id="profileModal">
+        <div class="modal-content profile-modal">
+            <div class="profile-header">
+                <img id="profileImg" src="" alt="">
+                <div>
+                    <h2 id="profileName"></h2>
+                    <p id="profileRole"></p>
+                </div>
+            </div>
+            <div class="profile-details">
+                <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="profilePhone"></span></p>
+                <div id="profileExperience"></div>
+            </div>
+            <div class="profile-actions">
+                <button class="edit-profile-btn" id="editProfileBtn">✏️ Edit</button>
+                <button class="delete-profile-btn" id="deleteProfileBtn">🗑️ Delete</button>
+                <button class="close-profile-btn" id="closeProfileBtn">Close</button>
+            </div>
         </div>
     </div>
 
